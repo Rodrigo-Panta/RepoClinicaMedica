@@ -34,6 +34,6 @@
      > venv/clinicamedica/Scripts/activate
      
      Se tudo ocorreu bem, agora o nome do ambiente virtual aparece em verde antes do caminho do diretório atual no terminal:
-                  <img width="25%" src="https://github.com/Rodrigo-Panta/RepoClinicaMedica/blob/main/images/venv.png" />
+                  <img width="25%" align="center" src="https://github.com/Rodrigo-Panta/RepoClinicaMedica/blob/main/images/venv.png" />
 
   7.    
