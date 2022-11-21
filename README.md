@@ -32,9 +32,7 @@
     
    Note que a pasta venv foi criada. O ambiente virtual já foi criado.
   
-  6. Ative o ambiente virtual executando o script de ativação, que fica em venv/clinicamedica/Scripts.
-    
-     Do diretório raiz do projeto, basta executar no terminal:
+  6. Ative o ambiente virtual executando o script de ativação, que fica em venv/clinicamedica/Scripts. Do diretório raiz do projeto, basta executar no terminal:
      
      
      venv/clinicamedica/Scripts/activate
