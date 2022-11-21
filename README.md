@@ -42,8 +42,8 @@
      <p align="center"><img width="25%" align="center" src="https://github.com/Rodrigo-Panta/RepoClinicaMedica/blob/main/images/venv.png" />
      </p>
      
-     Você pode desativar o ambiente virtual a qualquer momento de qualquer diretório utilizando o comando "exit" no terminal. Para ativá-lo novamente, é só seguir o passo 
-6.  
+     Você pode desativar o ambiente virtual a qualquer momento de qualquer diretório utilizando o comando "deactivate" no terminal. Para ativá-lo novamente, é só seguir o passo 6.  
+  
   7. Agora que o ambiente virtual está ativo, basta instalar as dependências necessárias que estão listadas no arquivo requirements.txt. Ainda na raiz do projeto, execute:
   
     pip install -r requirements.txt
