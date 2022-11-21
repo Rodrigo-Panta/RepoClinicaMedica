@@ -54,5 +54,6 @@
     python manage.py makemigrations
     python manage.py migrate
     python manage.py runserver
-    
+  
+  9. Abra um navegador e acesse o endereço de IP mostrado na saída do terminal. 
     
