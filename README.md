@@ -12,18 +12,23 @@
   
   3. Verifique a instalação do software Python e do gerenciador de pacotes pip. Em um terminal, execute:
     
-    > python --version
+    ```
+    python --version
     
-    > pip --version
+    pip --version
+    ```
   
   4. Instale o pacote virtualenv do Python para que seja possível criar e utilizar ambientes virtuais. Em um terminal, execute o comando:
     
-    > pip install virtualenv
+    ```
+    pip install virtualenv
+    ```
    
   5. Quando finalizar a instalação, navegue pelo terminal até o diretório raiz do projeto (<CaminhoParaOProjeto>/RepoClinicaMedica) e crie um novo ambiente virtual: 
     
-    > python -m venv venv/clinicamedica   
-  
+    ```
+    python -m venv venv/clinicamedica   
+    ```
     
     Note que a pasta venv foi criada. O ambiente virtual já foi criado.
    
@@ -31,8 +36,10 @@
     
      Do diretório raiz do projeto, vasta executar no terminal:
      
-     > venv/clinicamedica/Scripts/activate
-     
+     ```
+     venv/clinicamedica/Scripts/activate
+     ```
+  
      Se tudo ocorreu bem, agora o nome do ambiente virtual aparece em verde antes do caminho do diretório atual no terminal:
      <p align="center"><img width="25%" align="center" src="https://github.com/Rodrigo-Panta/RepoClinicaMedica/blob/main/images/venv.png" />
 </p>
