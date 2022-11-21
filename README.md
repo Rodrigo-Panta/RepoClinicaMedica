@@ -34,9 +34,9 @@
   
   6. Ative o ambiente virtual executando o script de ativação, que fica em venv/clinicamedica/Scripts. Do diretório raiz do projeto, basta executar no terminal:
      
-     
+     ```
      venv/clinicamedica/Scripts/activate
-     
+     ```
   
      Se tudo ocorreu bem, agora o nome do ambiente virtual aparece em verde antes do caminho do diretório atual no terminal:
      <p align="center"><img width="25%" align="center" src="https://github.com/Rodrigo-Panta/RepoClinicaMedica/blob/main/images/venv.png" />
