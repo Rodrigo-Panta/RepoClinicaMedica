@@ -30,8 +30,7 @@
     python -m venv venv/clinicamedica   
     
     
-  
-    Note que a pasta venv foi criada. O ambiente virtual já foi criado.
+   Note que a pasta venv foi criada. O ambiente virtual já foi criado.
   
   6. Ative o ambiente virtual executando o script de ativação, que fica em venv/clinicamedica/Scripts.
     
