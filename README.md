@@ -30,7 +30,9 @@
     python -m venv venv/clinicamedica   
     
     
-   
+  
+    Note que a pasta venv foi criada. O ambiente virtual já foi criado.
+  
   6. Ative o ambiente virtual executando o script de ativação, que fica em venv/clinicamedica/Scripts.
     
      Do diretório raiz do projeto, vasta executar no terminal:
@@ -42,4 +44,15 @@
      <p align="center"><img width="25%" align="center" src="https://github.com/Rodrigo-Panta/RepoClinicaMedica/blob/main/images/venv.png" />
 </p>
   
-  7.    
+  7. Agora que o ambiente virtual está ativo, basta instalar as dependências necessárias que estão listadas no arquivo requirements.txt. Ainda na raiz do projeto, execute:
+  
+    pip install -r requirements.txt
+  
+  8. Agora, todos os passos da instalação já foram completos. Para checar se o projeto está funcional, navegue até a pasta clínica médica, execute os comandos de migração do banco de dados e inicie o servidor Django:
+    
+    cd clinicamedica
+    python manage.py makemigrations
+    python manage.py migrate
+    python manage.py runserver
+    
+    
