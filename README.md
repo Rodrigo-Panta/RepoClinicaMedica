@@ -2,7 +2,7 @@
 
 # Instalação: 
   
-  Para rodar o projeto, será utilizado um ambiente virtual, que concentra a instalação das dependências necessárias, evitando conflitos de versionamento com outras dependências instaladas na máquina do desenvolvedor.
+  Para rodar o projeto, será utilizado um ambiente virtual, que concentra a instalação das dependências necessárias, evitando conflitos de versionamento com outros projetos instaladas na máquina do desenvolvedor.
   
   1. Faça Fork do projeto e o clone em um diretório desejado.
   
@@ -23,6 +23,7 @@
   5. Quando finalizar a instalação, navegue pelo terminal até o diretório raiz do projeto (<CaminhoParaOProjeto>/RepoClinicaMedica) e crie um novo ambiente virtual: 
     
     > python -m venv venv/clinicamedica   
+  
     
     Note que a pasta venv foi criada. O ambiente virtual já foi criado.
    
@@ -33,5 +34,6 @@
      > venv/clinicamedica/Scripts/activate
      
      Se tudo ocorreu bem, agora o nome do ambiente virtual aparece em verde antes do caminho do diretório atual no terminal:
-      
+     <img width="25%" src="https://github.com/Rodrigo-Panta/RepoClinicaMedica/blob/main/images/venv.png" />
+
   7.    
