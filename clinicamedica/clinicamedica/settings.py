@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'account.apps.AccountConfig'
 ]
 
 MIDDLEWARE = [
@@ -99,6 +100,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "account.BaseUser"
+AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend'] # new
+    
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
