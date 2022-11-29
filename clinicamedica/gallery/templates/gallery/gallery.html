@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block body %}
+
+    <h1>Galeria da Clínica Médica</h1>
+
+    <div>
+        {% for photo in photos %}
+            <img src="{{ photo.photo.url }}" />
+        {% endfor %}
+    </div>
+
+{% endblock %}
