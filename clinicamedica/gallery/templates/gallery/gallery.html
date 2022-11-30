@@ -1,4 +1,5 @@
 {% extends "base/base.html" %}
+{% load static %}
 
 {% block title %}Gallery{% endblock %}
 
@@ -7,9 +8,10 @@
     <h1>Galeria da Clínica Médica</h1>
 
     <div>
-        {% for photo in photos %}
-            <img src="{{ photo.photo.url }}" />
-        {% endfor %}
+        <img src="{% static 'images/gallery/clinica1.jpg' %}"/>
+        <img src="{% static 'images/gallery/clinica2.jpg' %}"/>
+        <img src="{% static 'images/gallery/clinica3.jpg' %}"/>
+        <img src="{% static 'images/gallery/clinica4.jpg' %}"/>
     </div>
 
 {% endblock %}

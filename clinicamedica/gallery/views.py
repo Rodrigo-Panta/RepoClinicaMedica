@@ -1,8 +1,6 @@
-from django.shortcuts import render
-from .models import Photo 
+from django.shortcuts import render, redirect
+
 # Create your views here.
 
-def gallery(request):
-    photos = Photo.objects.all()
-    
-    return render(request, 'gallery/gallery.html', {'photos' : photos})
+def gallery_view(request):
+    return render(request, 'gallery/gallery.html')
