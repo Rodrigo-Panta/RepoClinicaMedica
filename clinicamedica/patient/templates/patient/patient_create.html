@@ -10,7 +10,8 @@
     <div>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ user_form.as_p }}
+            {{ patient_form.as_p }}
             <button type="submit">Salvar</button>
         </form>
     </div>
