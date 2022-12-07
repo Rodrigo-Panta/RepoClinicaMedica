@@ -9,5 +9,5 @@ class BaseUser(AbstractUser):
     cep = models.CharField('cep', validators=[cep_regex], max_length=8)
     street_data = models.CharField('logradouro',max_length=200)
     neighborhood = models.CharField('bairro', max_length=200)
-    city = models.CharField('city',max_length=100)
-    
+    city = models.CharField('cidade',max_length=100)
+    state = models.CharField('estado', max_length=100)

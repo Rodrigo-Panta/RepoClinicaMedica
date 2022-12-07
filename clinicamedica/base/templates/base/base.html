@@ -12,6 +12,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="{% url "gallery" %}">Galeria</a></li>
             {% if request.user.is_authenticated %}
+            <li><a href="{% url "patient:create" %}">Cadastrar paciente</a></li>
             <li><a href="{% url "account:logout" %}">Logout</a></li>
             <li><h4>Funcionário logado: {{ request.user.get_full_name }}</h4></li>
             {% else %}

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
     'base.apps.BaseConfig',
-    'gallery.apps.GalleryConfig'
+    'gallery.apps.GalleryConfig',
+    'patient.apps.PatientConfig',
 ]
 
 MIDDLEWARE = [
@@ -105,6 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTH_USER_MODEL = "account.BaseUser"
 AUTHENTICATION_BACKENDS = ['account.backends.EmailBackend'] # new
 
+LOGIN_URL = '/account/login/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

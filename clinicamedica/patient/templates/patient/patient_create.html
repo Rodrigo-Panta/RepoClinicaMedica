@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Cadastro de Paciente{% endblock %}
+
+{% block body %}
+
+    <h1>Cadastro de Paciente</h1>
+
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+{% endblock %}
