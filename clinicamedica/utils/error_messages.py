@@ -1,0 +1,2 @@
+PATIENT_EMAIL_ERROR_MESSAGE = "Este email está associado à conta de um paciente. Por favor, providencie o email de um funcionário"
+REGISTERED_USER_ERROR_MESSAGE = "Um usuário já foi cadastrado com esse email"

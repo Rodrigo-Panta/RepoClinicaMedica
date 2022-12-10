@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'gallery.apps.GalleryConfig',
     'patient.apps.PatientConfig',
+    'employee.apps.EmployeeConfig',
 ]
 
 MIDDLEWARE = [

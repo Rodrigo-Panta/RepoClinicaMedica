@@ -7,6 +7,7 @@ from .forms import PatientForm
 from account.models import BaseUser
 from account.forms import BaseUserForm
 
+from utils.error_messages import REGISTERED_USER_ERROR_MESSAGE
 # Create your views here.
 
 @login_required
@@ -17,7 +18,7 @@ def patient_create(request):
         
         if user_form.is_valid() and patient_form.is_valid():
             if len(BaseUser.objects.filter(email=user_form.cleaned_data['email'])): 
-                user_form.add_error("email", "Um usuário já foi cadastrado com esse email")
+                user_form.add_error("email", REGISTERED_USER_ERROR_MESSAGE)
             else: 
                 user = user_form.save(commit=False)
                 user.username = user_form.cleaned_data['email']
