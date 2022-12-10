@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 from .forms import LoginForm
+from .models import BaseUser
 
 from patient.models import Patient
 from utils.error_messages import PATIENT_EMAIL_ERROR_MESSAGE
@@ -15,10 +16,10 @@ def login_view(request):
         form = LoginForm(request.POST)
         if form.is_valid:
             email = request.POST['username']
-            if(len(Patient.objects.filter(email=email))):
-                form.add_error('email', PATIENT_EMAIL_ERROR_MESSAGE)
+            if(len(Patient.objects.filter(user=BaseUser.objects.filter(email=email)[0]))):
+                form.add_error('email', PATIENT_EMAIL_ERROR_MESSAGE)    
             else:
-                password = request.POST['password']
+                password = request.POST['password'] 
                 user = authenticate(request, username=email, password=password)
                 if user is not None:
                     login(request, user)
