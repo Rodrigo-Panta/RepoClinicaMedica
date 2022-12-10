@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
 from .models import BaseUser
 
-from patient.models import Patient
-from utils.error_messages import PATIENT_EMAIL_ERROR_MESSAGE
+from employee.models import Employee
+from utils.error_messages import EMPLOYEE_NOT_FOUND_ERROR_MESSAGE
 
 def login_view(request):
     if request.user.is_authenticated:
@@ -14,19 +14,22 @@ def login_view(request):
 
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        if form.is_valid:
-            email = request.POST['username']
-            if(len(Patient.objects.filter(user=BaseUser.objects.filter(email=email)[0]))):
-                form.add_error('email', PATIENT_EMAIL_ERROR_MESSAGE)    
-            else:
+        if form.is_valid():
+            email = request.POST['email']
+            try:
+                employee = Employee.objects.get(user = BaseUser.objects.get(email=email))
                 password = request.POST['password'] 
                 user = authenticate(request, username=email, password=password)
                 if user is not None:
                     login(request, user)
                     # Redirect to a success page.
                     return redirect('index')
+            except:
+                pass
+        form.errors['__all__']= form.error_class([EMPLOYEE_NOT_FOUND_ERROR_MESSAGE])
+
     else:
-        form = LoginForm
+        form = LoginForm()
     return render(request, 'account/login.html', {'form':form})
 
 @login_required

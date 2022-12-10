@@ -11,5 +11,6 @@ class BaseUserForm(forms.ModelForm):
         model = BaseUser
         fields = ['name', 'email', 'phone', 'cep', 'street_data', 'neighborhood', 'city','state']
 
-class LoginForm(AuthenticationForm):
-    username = forms.EmailField(label='Email')
+class LoginForm(forms.Form):
+    email = forms.EmailField(label='Email')
+    password = forms.CharField(widget=forms.PasswordInput())

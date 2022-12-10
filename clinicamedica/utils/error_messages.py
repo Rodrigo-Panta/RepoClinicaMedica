@@ -1,2 +1,2 @@
-PATIENT_EMAIL_ERROR_MESSAGE = "Este email está associado à conta de um paciente. Por favor, providencie o email de um funcionário"
+EMPLOYEE_NOT_FOUND_ERROR_MESSAGE = "Não foi encontrado um usuário cadastrado com o email e a senha apresentados"
 REGISTERED_USER_ERROR_MESSAGE = "Um usuário já foi cadastrado com esse email"
