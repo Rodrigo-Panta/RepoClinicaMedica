@@ -1,0 +1,30 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Cadastro de Funcionário{% endblock %}
+
+{% block body %}
+
+    <h1>Cadastro de Funcionário</h1>
+
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ user_form.as_p }}
+            
+            {% for field in employee_form %}
+            {{ field.errors }}
+            <div class="form-group">
+                <label class="mylabel">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+            
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+{% endblock %}
+{% block js_block %}
+    <script type="text/javascript" src="{% static 'employee/js/employee_form.js' %}"></script>
+{% endblock %}

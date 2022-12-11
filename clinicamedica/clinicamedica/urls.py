@@ -22,4 +22,5 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('gallery/', include('gallery.urls')),
     path('patient/', include('patient.urls')),
+    path('employee/', include('employee.urls')),
 ]

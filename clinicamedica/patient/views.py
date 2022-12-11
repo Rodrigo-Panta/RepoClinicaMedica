@@ -33,4 +33,4 @@ def patient_create(request):
     else:
         user_form = BaseUserForm() 
         patient_form = PatientForm()
-    return render(request, 'patient/patient_create.html', {'user_form':user_form, 'patient_form':patient_form})
+    return render(request, 'patient/patient_form.html', {'user_form':user_form, 'patient_form':patient_form})

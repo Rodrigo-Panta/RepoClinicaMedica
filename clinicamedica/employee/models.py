@@ -11,4 +11,4 @@ class Employee(models.Model):
 class Doctor(models.Model):
     employee = models.OneToOneField('employee.Employee', on_delete=models.CASCADE, primary_key=True)
     crm = models.CharField("crm (formato CRM/UF XXXXXX)", max_length=13, validators=[crm_regex])
-    spcialty = models.CharField("especialidade", max_length=100)
+    specialty = models.CharField("especialidade", max_length=100)
