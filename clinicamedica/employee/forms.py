@@ -6,7 +6,6 @@ from account.forms import BaseUserForm
 
 from .models import Employee 
 from utils.regex_validators import *
-from utils.blood_types import blood_types
 
 class EmployeeForm(forms.ModelForm):
     password = forms.CharField(label="Senha", widget=forms.PasswordInput())

@@ -11,9 +11,10 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="{% url "gallery" %}">Galeria</a></li>
+            <li><a href="{% url "address:create_address" %}">Cadastro de Endereços</a></li>            
             {% if request.user.is_authenticated %}
-            <li><a href="{% url "patient:create" %}">Cadastrar paciente</a></li>
-            <li><a href="{% url "employee:create" %}">Cadastrar Funcionario</a></li>
+            <li><a href="{% url "patient:create_patient" %}">Cadastrar paciente</a></li>
+            <li><a href="{% url "employee:create_employee" %}">Cadastrar Funcionario</a></li>
             <li><a href="{% url "account:logout" %}">Logout</a></li>
             <li><h4>Funcionário logado: {{ request.user.name }}</h4></li>
             {% else %}

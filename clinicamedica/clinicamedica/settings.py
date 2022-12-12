@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'patient.apps.PatientConfig',
     'employee.apps.EmployeeConfig',
+    'address.apps.AddressConfig',
 ]
 
 MIDDLEWARE = [
