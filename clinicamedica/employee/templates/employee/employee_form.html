@@ -19,8 +19,8 @@
                 {{ field }}
             </div>
             {% endfor %}
-            
             <button type="submit">Salvar</button>
+            <input type="hidden" id='api_get_address_url' value={% url 'address:api_get_address' %}/>
         </form>
     </div>
 
