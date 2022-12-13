@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.list import ListView
 
 
 from .models import Employee, Doctor
@@ -12,6 +14,11 @@ from account.forms import BaseUserForm
 
 from utils.error_messages import REGISTERED_USER_ERROR_MESSAGE
 # Create your views here.
+
+class EmployeeListView(ListView, LoginRequiredMixin):
+    model = Employee
+    template_name = 'employee/employee_list.html'    
+    fields = '__all__'    
 
 @login_required
 def employee_create(request):
