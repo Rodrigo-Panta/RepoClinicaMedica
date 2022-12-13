@@ -55,6 +55,6 @@ def employee_create(request):
 
 def get_doctors(request, specialty):
     if specialty is None:
-        return JsonResponse({'doctors':[f"{doctor}" for doctor in Doctor.objects.all()]})
+        return JsonResponse({'doctors':{doctor.employee.user.email:f"{doctor}" for doctor in Doctor.objects.all()}})
     else:
-        return JsonResponse({'doctors':[f"{doctor}" for doctor in Doctor.objects.filter(specialty=specialty)]})
+        return JsonResponse({'doctors':{doctor.employee.user.email:f"{doctor}" for doctor in Doctor.objects.filter(specialty=specialty)}})

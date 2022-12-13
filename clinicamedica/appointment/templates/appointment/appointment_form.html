@@ -14,6 +14,7 @@
             {% csrf_token %}
             {{ form|crispy }}
             <input type="hidden" id='api_get_doctors_url' value={% url 'employee:api_get_doctors' %}/>
+            <input type="hidden" id='api_get_available_times_url' value={% url 'appointment:api_get_available_times' %}/>
             <button type="submit" class="btn btn-success">Salvar</button>
         </form>
     </div>
