@@ -11,6 +11,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="{% url "gallery" %}">Galeria</a></li>
+            <li><a href="{% url "appointment:create_appointment" %}">Agendamento de Consulta</a></li>            
             <li><a href="{% url "address:create_address" %}">Cadastro de Endereços</a></li>            
             {% if request.user.is_authenticated %}
             <li><a href="{% url "patient:create_patient" %}">Cadastrar paciente</a></li>

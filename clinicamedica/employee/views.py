@@ -1,5 +1,7 @@
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 from .models import Employee, Doctor
 from .forms import EmployeeForm
@@ -49,3 +51,8 @@ def employee_create(request):
         user_form = BaseUserForm() 
         employee_form = EmployeeForm()
     return render(request, 'employee/employee_form.html', {'user_form':user_form, 'employee_form':employee_form})
+
+
+def get_specialties(request):
+    specialties = Doctor.objects.values_list('specialty', flat=True).distinct()
+    return JsonResponse({'specialties':list(specialties)})

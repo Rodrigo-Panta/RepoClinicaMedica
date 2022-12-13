@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Agendamento de Consulta{% endblock %}
+
+{% block body %}
+
+    <h1>Agendamento de Consulta</h1>
+
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+{% endblock %}
