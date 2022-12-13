@@ -26,7 +26,11 @@
             <td>{{ endereco.state }}</td>
           </tr>
           {% empty %}
-          <p>Não foi cadastrado endereços</p>
+          <tr>
+            <td colspan="5">
+            <p>Não foi cadastrado nenhum endereços</p>
+            </td>
+          </tr>
           {% endfor %}
         </tbody>
       </table>
