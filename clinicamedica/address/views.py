@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
+from django.views.generic.list import ListView
 from .models import Address
 
 # Create your views here.
@@ -10,6 +12,10 @@ class AddressCreateView(CreateView):
     template_name = 'address/address_form.html'    
     fields = '__all__'
 
+class AddressListView(ListView, LoginRequiredMixin):
+    model = Address
+    template_name = 'address/list.html'    
+    fields = '__all__'
 
 @login_required
 def get_address(request, cep):
@@ -26,3 +32,4 @@ def get_address(request, cep):
         }
         return JsonResponse(response, safe=False)
     return JsonResponse({})
+    
