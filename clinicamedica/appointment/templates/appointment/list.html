@@ -30,7 +30,11 @@
             <td>{{ consulta.phone }}</td>
           </tr>
           {% empty %}
-          <p>Não foi consulta marcada</p>
+          <tr>
+            <th colspan="7">
+            <p>Não tem consultas marcadas</p>
+            </th>
+         </tr>
           {% endfor %}
         </tbody>
       </table>
