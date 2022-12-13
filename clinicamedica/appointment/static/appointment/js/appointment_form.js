@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 });
 
+document.addEventListener("load", (event) => {
+    updateDoctorField();
+    updateTimeField();
+});
+
+
 function updateDoctorField(event){
     let specialty = document.getElementById('id_specialty').value;
     let doctor_field = document.getElementById('id_doctor');
@@ -29,6 +35,7 @@ function populateDoctorField(doctorsString){
     let doctorsResponse = JSON.parse(doctorsString);
     let doctors = doctorsResponse['doctors'];
     let doctor_field = document.getElementById('id_doctor');
+    doctor_field.innerHTML = '<option value="" selected="">-------------</option>';
     for (key in doctors) {
         doctor_field.innerHTML += `\n<option value="${key}">${doctors[key]}</option>`;    
     }
@@ -56,8 +63,9 @@ function populateTimeField(timeString){
     let timeResponse = JSON.parse(timeString);
     let available_times = timeResponse['times'];
     let time_field = document.getElementById('id_time');
+    time_field.innerHTML = '<option value="" selected="">-------------</option>';
     available_times.forEach(element => {
-        time_field.innerHTML += `\n<option value="">${element}</option>`;    
+        time_field.innerHTML += `\n<option value="${element}">${element}:00</option>`;    
     });
     time_field.disabled = false;
 }   
