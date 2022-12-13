@@ -21,7 +21,7 @@ class AppointmentCreateView(CreateView):
     
 class AppointmentListView(ListView, LoginRequiredMixin):
     model = Appointment
-    template_name = 'appointment/list.html'    
+    template_name = 'appointment/appointment_list.html'    
     fields = '__all__'    
 
 

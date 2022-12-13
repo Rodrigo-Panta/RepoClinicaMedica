@@ -14,7 +14,7 @@ class AddressCreateView(CreateView):
 
 class AddressListView(ListView, LoginRequiredMixin):
     model = Address
-    template_name = 'address/list.html'    
+    template_name = 'address/address_list.html'    
     fields = '__all__'
 
 @login_required
