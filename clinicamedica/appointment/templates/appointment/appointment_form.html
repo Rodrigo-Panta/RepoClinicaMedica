@@ -12,8 +12,6 @@
     <div>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Salvar</button>
             {{ form|crispy }}
             <input type="hidden" id='api_get_doctors_url' value={% url 'employee:api_get_doctors' %}/>
             <button type="submit" class="btn btn-success">Salvar</button>
