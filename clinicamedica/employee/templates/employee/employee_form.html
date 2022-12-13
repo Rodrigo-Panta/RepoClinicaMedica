@@ -1,25 +1,23 @@
 {% extends "base/base.html" %}
 {% load static %}
 
-{% block title %}Cadastro de Funcionário{% endblock %}
+{% block title %}MedCloud - Cadastro de Funcionário{% endblock %}
 
 {% block body %}
 
     <h1>Cadastro de Funcionário</h1>
-
+    {% load crispy_forms_tags %}
     <div>
         <form method="post">
             {% csrf_token %}
-            {{ user_form.as_p }}
-            
+            {{ user_form|crispy }}
             {% for field in employee_form %}
             {{ field.errors }}
             <div class="form-group">
-                <label class="mylabel">{{ field.label }}</label>
-                {{ field }}
+                {{ field|as_crispy_field }}
             </div>
             {% endfor %}
-            <button type="submit">Salvar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
             <input type="hidden" id='api_get_address_url' value={% url 'address:api_get_address' %}/>
         </form>
     </div>

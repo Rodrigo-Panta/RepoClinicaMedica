@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'employee.apps.EmployeeConfig',
     'address.apps.AddressConfig',
     'appointment.apps.AppointmentConfig',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -136,4 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
