@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
+
 from .models import Employee, Doctor
 from .forms import EmployeeForm
 
@@ -51,6 +52,12 @@ def employee_create(request):
         user_form = BaseUserForm() 
         employee_form = EmployeeForm()
     return render(request, 'employee/employee_form.html', {'user_form':user_form, 'employee_form':employee_form})
+
+
+def get_employee_list(request):
+    employees = Employee.objects.all()
+    doctors = Doctor.objects.all()
+    return render(request, 'employee/list.html',{'employees':employees, 'doctors':doctors})
 
 
 def get_doctors(request, specialty):
