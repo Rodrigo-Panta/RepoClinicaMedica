@@ -21,8 +21,8 @@
         <tbody>
             {% for consulta in object_list %}
           <tr>
-            <th scope="row">{{ consulta.date }}</th>
-            <td>{{ consulta.time }}</td>
+            <th scope="row">{{ consulta.date|date:"d/m/y" }}</th>
+            <td>{{ consulta.time }}:00</td>
             <td>{{ consulta.specialty }}</td>
             <td>{{ consulta.doctor }}</td>
             <td>{{ consulta.nome }}</td>
