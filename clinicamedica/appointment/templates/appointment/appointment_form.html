@@ -11,8 +11,13 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
+            <input type="hidden" id='api_get_doctors_url' value={% url 'employee:api_get_doctors' %}/>
             <button type="submit">Salvar</button>
         </form>
     </div>
 
 {% endblock %}
+
+{% block js_block %}
+<script type="text/javascript" src="{% static 'appointment\js\appointment_form.js' %}"></script>
+{% endblock%}

@@ -53,6 +53,8 @@ def employee_create(request):
     return render(request, 'employee/employee_form.html', {'user_form':user_form, 'employee_form':employee_form})
 
 
-def get_specialties(request):
-    specialties = Doctor.objects.values_list('specialty', flat=True).distinct()
-    return JsonResponse({'specialties':list(specialties)})
+def get_doctors(request, specialty):
+    if specialty is None:
+        return JsonResponse({'doctors':[f"{doctor}" for doctor in Doctor.objects.all()]})
+    else:
+        return JsonResponse({'doctors':[f"{doctor}" for doctor in Doctor.objects.filter(specialty=specialty)]})

@@ -5,6 +5,7 @@ app_name='employee'
 
 urlpatterns = [
     path('create/', views.employee_create, name='create_employee'),
-    path('api/get_specialties', views.get_specialties, name='api_get_specialties'),
+    path('api/get_doctors', views.get_doctors, name='api_get_doctors'),
+    path('api/get_doctors/<specialty>', views.get_doctors, name='api_get_doctors'),
 
 ]
