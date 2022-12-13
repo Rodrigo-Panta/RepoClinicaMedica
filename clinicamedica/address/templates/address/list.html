@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+
+{% block title %}MedCloud -Listagem de Endereço{% endblock %}
+
+{% block body %}
+
+    <h1>Listagem de Endereço</h1>
+
+    <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">CEP</th>
+            <th scope="col">Logradouro</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for endereco in object_list %}
+          <tr>
+            <th scope="row">{{ endereco.cep }}</th>
+            <td>{{ endereco.street_data }}</td>
+            <td>{{ endereco.neighborhood }}</td>
+            <td>{{ endereco.city }}</td>
+            <td>{{ endereco.state }}</td>
+          </tr>
+          {% empty %}
+          <p>Não foi cadastrado endereços</p>
+          {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}
