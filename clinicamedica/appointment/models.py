@@ -7,7 +7,7 @@ from utils.regex_validators import phone_regex
 # Create your models here.
 class Appointment(models.Model):
     specialty = models.CharField("especialidade", max_length=100)
-    doctor = models.ForeignKey('employee.Doctor', on_delete=models.CASCADE)
+    doctor = models.ForeignKey('employee.Doctor', verbose_name="Médico", on_delete=models.CASCADE)
     date = models.DateField('data')
     time = models.CharField('hora', choices=TIME_CHOICES, max_length=10)
     nome = models.CharField("nome", max_length=200)    

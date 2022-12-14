@@ -18,7 +18,7 @@ from utils.time_choices import time_choices
 class AppointmentCreateView(CreateView):
     model = Appointment
     template_name = 'appointment/appointment_form.html'    
-    fields = '__all__'
+    form_class = AppointmentForm
     
 class AppointmentListView(LoginRequiredMixin, ListView):
     model = Appointment

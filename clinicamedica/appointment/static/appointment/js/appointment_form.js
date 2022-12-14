@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function(e) {
     updateDoctorField();
     
     document.getElementById('id_doctor').addEventListener('change', updateTimeField);
+    document.getElementById('id_doctor').addEventListener('focusout', updateTimeField);
     document.getElementById('id_date').addEventListener('change', updateTimeField);
+    document.getElementById('id_date').addEventListener('focusout', (e)=>{updateTimeField();setTimeout(updateTimeField,"500")});
     updateTimeField();
 
 
@@ -48,7 +50,7 @@ function updateTimeField(event){
     let date = document.getElementById('id_date').value;
     let time_field = document.getElementById('id_time');
     if(doctor && date){
-
+        time_field.disabled = false;
         url = `${document.getElementById('api_get_available_times_url').value}${doctor}/${date.replaceAll('/','_')}`;
         httpGetAsync(url,populateTimeField);
       }else{
@@ -59,7 +61,6 @@ function updateTimeField(event){
 }
 
 function populateTimeField(timeString){
-    console.log(timeString);
     let timeResponse = JSON.parse(timeString);
     let available_times = timeResponse['times'];
     let time_field = document.getElementById('id_time');

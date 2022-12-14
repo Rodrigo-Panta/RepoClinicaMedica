@@ -12,7 +12,7 @@ from account.forms import BaseUserForm
 from utils.error_messages import REGISTERED_USER_ERROR_MESSAGE
 # Create your views here.
 
-class PatientListView(ListView, LoginRequiredMixin):
+class PatientListView(LoginRequiredMixin, ListView):
     model = Patient
     template_name = 'patient/patient_list.html'    
     fields = '__all__'    
