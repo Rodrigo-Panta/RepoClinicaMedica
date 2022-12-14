@@ -52,7 +52,8 @@
     
     cd clinicamedica
     python manage.py makemigrations
-    python manage.py migrate
+    python manage.py migrate (Caso receba um erro indicando tabelas de banco de dados inexistentes, execute python manage.py migrate --run-syncdb
+
     python manage.py runserver
   
   9. Abra um navegador e acesse o endereço de IP mostrado na saída do terminal. 
