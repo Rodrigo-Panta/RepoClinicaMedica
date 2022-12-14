@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.list import ListView
 
 from .models import Patient
 from .forms import PatientForm
@@ -9,6 +11,11 @@ from account.forms import BaseUserForm
 
 from utils.error_messages import REGISTERED_USER_ERROR_MESSAGE
 # Create your views here.
+
+class PatientListView(ListView, LoginRequiredMixin):
+    model = Patient
+    template_name = 'patient/patient_list.html'    
+    fields = '__all__'    
 
 @login_required
 def patient_create(request):

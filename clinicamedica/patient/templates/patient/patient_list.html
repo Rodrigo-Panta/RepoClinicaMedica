@@ -1,0 +1,36 @@
+{% extends "base/base.html" %}
+
+{% block title %}MedCloud - Listagem de Pacientes{% endblock %}
+
+{% block body %}
+
+    <h1>Listagem de Pacientes</h1>
+
+    <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Especialidade</th>
+            <th scope="col">Doctor</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for patient in object_list %}
+          <tr>
+            <th scope="row">{{ patient.weight }}</th>
+            <td>{{ patient.blood_type }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <th colspan="7">
+            <p>Não tem consultas marcadas</p>
+            </th>
+         </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}
