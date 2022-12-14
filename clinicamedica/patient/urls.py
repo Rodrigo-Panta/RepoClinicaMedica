@@ -6,4 +6,5 @@ app_name='patient'
 urlpatterns = [
     path('create/', views.patient_create, name='create_patient'),
     path('list/', views.PatientListView.as_view(), name='list_patient'),
+    path('', views.PatientListView.as_view(), name='list_patient'),
 ]

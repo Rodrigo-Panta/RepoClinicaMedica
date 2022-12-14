@@ -21,7 +21,7 @@
     text-align: left;
 }
 
-.dropdown-content a:hover, .nav-link:hover, .nav-link:active {
+.dropdown-content a:hover, .nav-link:hover, .nav-link:active, .active {
     background-color: #005037 !important;
 }
 

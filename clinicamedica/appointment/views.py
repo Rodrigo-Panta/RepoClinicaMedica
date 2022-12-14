@@ -30,10 +30,8 @@ def api_get_available_times(request, doctor_id, date):
     date = f'{date_list[2]}-{date_list[1]}-{date_list[0]}'
     unavailable_times = list(Appointment.objects.filter(date=date, doctor = Doctor.objects.get(employee = Employee.objects.get(user=BaseUser.objects.get(email=doctor_id)))).values_list('time', flat=True))
     available_times = []
-    print(unavailable_times)
     for it in time_choices:
         print(it)
-
         if not it in unavailable_times:
             available_times.append(it)
     return JsonResponse({'times':available_times})
