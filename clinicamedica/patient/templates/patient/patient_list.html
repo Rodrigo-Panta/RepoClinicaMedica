@@ -6,28 +6,41 @@
 
     <h1>Listagem de Pacientes</h1>
 
-    <table class="table">
+    <table class="table table-sm">
         <thead class="table-dark">
           <tr>
-            <th scope="col">Data</th>
-            <th scope="col">Hora</th>
-            <th scope="col">Especialidade</th>
-            <th scope="col">Doctor</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
             <th scope="col">Telefone</th>
+            <th scope="col">CEP</th>
+            <th scope="col">Logradouro</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Cidade</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Altura</th>
+            <th scope="col">Tipo Sanguíneo</th>
           </tr>
         </thead>
         <tbody>
             {% for patient in object_list %}
           <tr>
-            <th scope="row">{{ patient.weight }}</th>
+            <th scope="row">{{ patient.user.name }}</th>
+            <td>{{ patient.user.email }}</td>
+            <td>{{ patient.user.phone }}</td>
+            <td>{{ patient.user.cep }}</td>
+            <td>{{ patient.user.street_data }}</td>
+            <td>{{ patient.user.neighborhood }}</td>
+            <td>{{ patient.user.city }}</td>
+            <td>{{ patient.user.state }}</td>
+            <td>{{ patient.weight }}</td>
+            <td>{{ patient.height }}</td>
             <td>{{ patient.blood_type }}</td>
           </tr>
           {% empty %}
           <tr>
             <th colspan="7">
-            <p>Não tem consultas marcadas</p>
+            <p>Não tem Pacientes Cadastrados</p>
             </th>
          </tr>
           {% endfor %}

@@ -13,12 +13,7 @@ from account.models import BaseUser
 from account.forms import BaseUserForm
 
 from utils.error_messages import REGISTERED_USER_ERROR_MESSAGE
-# Create your views here.
-
-class EmployeeListView(ListView, LoginRequiredMixin):
-    model = Employee
-    template_name = 'employee/employee_list.html'    
-    fields = '__all__'    
+# Create your views here. 
 
 @login_required
 def employee_create(request):
@@ -70,7 +65,7 @@ def get_employee_list(request):
         doctor = Doctor.objects.filter(employee = emp)
         if(len(doctor)): object_list.append([emp, doctor[0]])
         else: object_list.append([emp,None])
-    return render(request, 'employee/list.html',{'object_list':object_list})
+    return render(request, 'employee/employee_list.html',{'object_list':object_list})
 
 
 def get_doctors(request, specialty):
