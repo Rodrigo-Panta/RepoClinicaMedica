@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
+{% load is_doctor %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -73,6 +75,9 @@
               <div class="dropdown-content">
                 <a href="{% url "appointment:list_appointment" %}">Listar</a>
                 <a href="{% url "appointment:create_appointment" %}">Agendar</a>
+                {% if request.user|is_doctor %}
+                <a href="{% url "appointment:doctor_appointments" %}">Meus agendamentos</a>
+                {% endif %}
               </div> 
             </li>
             <li class="dropdown">
