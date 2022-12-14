@@ -20,7 +20,7 @@ class AppointmentCreateView(CreateView):
     template_name = 'appointment/appointment_form.html'    
     fields = '__all__'
     
-class AppointmentListView(ListView, LoginRequiredMixin):
+class AppointmentListView(LoginRequiredMixin, ListView):
     model = Appointment
     template_name = 'appointment/appointment_list.html'    
     fields = '__all__'    

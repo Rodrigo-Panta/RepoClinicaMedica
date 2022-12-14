@@ -12,7 +12,7 @@ class AddressCreateView(CreateView):
     template_name = 'address/address_form.html'    
     fields = '__all__'
 
-class AddressListView(ListView, LoginRequiredMixin):
+class AddressListView(LoginRequiredMixin, ListView):
     model = Address
     template_name = 'address/address_list.html'    
     fields = '__all__'
