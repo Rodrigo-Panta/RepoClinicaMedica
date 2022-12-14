@@ -48,11 +48,11 @@
   
     pip install -r requirements.txt
   
-  8. Agora, todos os passos da instalação já foram completos. Para checar se o projeto está funcional, navegue até a pasta clínica médica, execute os comandos de migração do banco de dados e inicie o servidor Django:
+  8. Agora, todos os passos da instalação já foram completos. Para checar se o projeto está funcional, navegue até a pasta clínica médica, execute os comandos de migração do banco de dados e inicie o servidor Django (Caso receba um erro indicando tabelas de banco de dados inexistentes, execute python manage.py migrate --run-syncdb):
     
     cd clinicamedica
     python manage.py makemigrations
-    python manage.py migrate
+    python manage.py migrate 
     python manage.py runserver
   
   9. Abra um navegador e acesse o endereço de IP mostrado na saída do terminal. 
