@@ -61,10 +61,16 @@ def employee_create(request):
     return render(request, 'employee/employee_form.html', {'user_form':user_form, 'employee_form':employee_form})
 
 
+@login_required
 def get_employee_list(request):
     employees = Employee.objects.all()
-    doctors = Doctor.objects.all()
-    return render(request, 'employee/list.html',{'employees':employees, 'doctors':doctors})
+    object_list = []
+
+    for emp in employees:
+        doctor = Doctor.objects.filter(employee = emp)
+        if(len(doctor)): object_list.append([emp, doctor[0]])
+        else: object_list.append([emp,None])
+    return render(request, 'employee/list.html',{'object_list':object_list})
 
 
 def get_doctors(request, specialty):

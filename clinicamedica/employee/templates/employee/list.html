@@ -1,0 +1,64 @@
+{% extends "base/base.html" %}
+
+{% block title %}MedCloud -Listagem de Funcionários{% endblock %}
+
+{% block body %}
+
+    <h1>Listagem de Funcionários</h1>
+
+    <table class="table table-sm">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">CEP</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Contratado</th>
+            <th scope="col">Salario</th>
+            
+          </tr>
+        </thead >
+        <tbody class="small">
+            {% for employee, doctor in object_list %}
+          <tr>
+            {% if doctor %}
+            <td scope="row">
+                <div class="d-flex">
+                    {{ employee.user.name }}
+                    <div class="ml-5" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="{{ doctor }} - {{ doctor.specialty }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-square-fill" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5a.5.5 0 0 1 1 0z"/>
+                        </svg>                
+                        </div>
+                </div>
+            {% else %}
+            <td scope="row">{{ employee.user.name }}</td>
+            {% endif %}
+            
+            <td>{{ employee.user.email }}</td>
+            <td>{{ employee.user.phone }}</td>
+            <td>{{ employee.user.cep }}</td>
+            <td>{{ employee.user.street_data }}. {{ employee.user.neighborhood }}. {{ employee.user.city }}, {{ employee.user.state }}</td>
+            <td>{{ employee.contract_date|date:"d/m/y" }}</td>
+            <td>{{ employee.salary }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <th colspan="7">
+            <p>Não tem consultas marcadas</p>
+            </th>
+         </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <script type="text/javascript">
+                
+        document.addEventListener("DOMContentLoaded", function(e) { 
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+        });
+      </script>
+      {% endblock %}
